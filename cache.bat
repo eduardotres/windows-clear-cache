@@ -1,17 +1,17 @@
 @echo off
-:: Verifica se está sendo executado como administrador
+:: Checks if the script is being run as administrator
 net session >nul 2>&1
 if %errorlevel% neq 0 (
-    echo Este script precisa ser executado como administrador.
-    echo Tentando reiniciar como administrador...
+    echo This script needs to be run as administrator.
+    echo Attempting to restart as administrator...
     powershell -Command "Start-Process '%~f0' -Verb runAs"
     exit /b
 )
 
-:: Define a variável para o usuário
-set USUARIO=eduar
+:: Sets the variable for the user
+set USER=eduar
 
-powershell -Command "Remove-Item 'C:\Users\%USUARIO%\AppData\Local\Temp\*' -Recurse -Force"
+powershell -Command "Remove-Item 'C:\Users\%USER%\AppData\Local\Temp\*' -Recurse -Force"
 
 powershell -Command "Remove-Item 'C:\Windows\Prefetch\*' -Recurse -Force"
 
@@ -19,11 +19,11 @@ powershell -Command "Remove-Item 'C:\Windows\Temp\*' -Recurse -Force"
 
 powershell -Command "ipconfig /flushdns"
 
-:: Limpa a lixeira
-echo Limpando a lixeira do sistema...
+:: Clears the recycle bin
+echo Clearing the system recycle bin...
 rd /s /q C:\$Recycle.bin
-echo Lixeira do sistema foi limpa.
+echo The system recycle bin has been cleared.
 
-:: Mensagem de conclusão
-echo Todas as operacoes de limpeza foram concluidas com sucesso!
+:: Completion message
+echo All cleaning operations have been successfully completed!
 pause
