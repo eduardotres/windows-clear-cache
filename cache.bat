@@ -9,7 +9,7 @@ if %errorlevel% neq 0 (
 )
 
 :: Sets the variable for the user
-set USER=eduar
+set USER=user
 
 powershell -Command "Remove-Item 'C:\Users\%USER%\AppData\Local\Temp\*' -Recurse -Force"
 
