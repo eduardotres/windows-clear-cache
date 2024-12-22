@@ -15,7 +15,7 @@ This script automates the cleanup of temporary files, prefetch data, and the rec
 
 ## How to Use
 1. **Download the Script**: Clone the repository or download the `.bat` file.
-2. **Edit the Script**: Replace the `set USER=eduar` line with your actual username.
+2. **Edit the Script**: Replace the `set USER=user` line with your actual username.
 3. **Run the Script**:
    - Right-click the `.bat` file and select **Run as Administrator**, or
    - Double-click the script, which will prompt for administrator access if not already elevated.
